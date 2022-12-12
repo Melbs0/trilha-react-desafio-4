@@ -28,6 +28,15 @@ const Login = () => {
     reValidateMode: "onChange",
   });
 
+  function isEnable (validation: boolean){
+      if (validation === true){
+        return ""
+      }
+      else {
+        return "disabled"
+      }
+  }
+
   return (
     <Container>
       <LoginContainer>
@@ -49,7 +58,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" disabled={isValid} />
         </Column>
       </LoginContainer>
     </Container>
